@@ -77,7 +77,7 @@ Vergelijk de volgende voorbeelden - wanneer is er sprake van hiërarchie en hoe 
 
 Van records zonder `coverage` zijn `title` en `description` tegen een [postagger](http://www.clips.ua.ac.be/pages/pattern-nl) aangehouden om eigennamen te extraheren. Die eigennamen zijn vervolgens alleen als geografische term opgeslagen als ze door de reguliere expressie `(^| )(?i)(te|uit|in|op|bij|naar)(?-i) (de|het|den)?[ ]?Eigennaam` kwamen (waarbij `Eigennaam` vervangen werd door de door de postagger gevonden eigennaam).
 
-Dit is gedaan met alle datasets behalve de kranten (zie voor de kranten de test met de 190 in de oorlog verschenen nummers van De Gelderlander).
+Dit is gedaan met alle datasets behalve de kranten (zie voor de kranten [de test met de 190 in de oorlog verschenen nummers van De Gelderlander](gelderlander-documentatie.md)).
 
 <table>
 <tr><td>Totaal aantal records</td><td>800.911</td></tr>
