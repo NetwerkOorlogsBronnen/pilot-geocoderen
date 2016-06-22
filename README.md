@@ -12,4 +12,6 @@ In [gelderlander-documentatie.md](documents/gelderlander-documentatie.md) you wi
 
 In the [scripts directory](scripts/readme.md) you will find some scripts we used.
 
+##data
+
 In [data](data/readme.md) you will find the results of this pilot. 
