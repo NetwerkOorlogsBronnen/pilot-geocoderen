@@ -6,7 +6,7 @@ De Pilot geocoderen Oorlogsbronnen is uitgevoerd door Menno den Engelse in opdra
 
 Het doel van de pilot Geocoderen Oorlogsbronnen was tweeledig:
 
-- Een data-analyse van de huidige geografische metadata in portal oorlogsbronnen. Hoe is de kwaliteit van de metadata en welke (niet)bruikbare resultaten levert geocoderen van de metadata op,
+- Een data-analyse van de huidige geografische metadata in [portal oorlogsbronnen](http://www.oorlogsbronnen.nl/). Hoe is de kwaliteit van de metadata en welke (niet)bruikbare resultaten levert geocoderen van de metadata op,
 - een goede en praktische wijze vinden om de door Oorlogsbronnen geharveste metadata te geocoderen en te verrijken. Deze wijze moet aansluiten bij de bestaande technische infrastructuur van oorlogsbronnen.
  
 Met de resultaten van de pilot moet ‘zoeken op plaats/geografisch zoeken’ verbeterd worden, het moet mogelijk worden  om ‘hiërarchisch’ geografisch te zoeken (plaats/gemeente/provincie). Er moeten sets gemaakt kunnen worden van geografische eenheden en metadata zal ook via de kaart ontsloten kunnen worden..
@@ -32,7 +32,7 @@ Onderzocht is welke stappen in het proces aangepast of toegevoegd moeten worden,
 Om nut en noodzaak van het geocoderen te illustreren worden één of meerdere kaartapplicaties gemaakt. Deze kaarten kunnen ook goed gebruikt worden bij het beoordelen en duiden van de resultaten.Het presenteren van bronnen op kaart is een belangrijke uitkomst.
 ·         
 ##De data
-De data bestaat uit door Netwerk Oorlogsbronnen geaggregeerde metadata van 27 collecties. Dit kunnen zowel museale, archief als bibliotheekcollecties zijn. Twee collecties (DIMCON en DIGCOL) bestaan op hun beurt weer uit verschillende collecties. 
+De data bestaat uit door Netwerk Oorlogsbronnen geaggregeerde metadata van 27 collecties. Dit kunnen zowel museale, archief als bibliotheekcollecties zijn. Twee collecties ([DIMCON](http://www.dimcon.nl/) en [DIGCOL](http://digitalecollectie.nl/)) bestaan op hun beurt weer uit verschillende collecties. 
 
 De kwaliteit van de metadata loopt sterk uiteen en dat kan mogelijk de kwaliteit van het geocoderen en geografische toepassingen beïnvloeden. De overgrote meerderheid van de metadata is nu in het Dublin Core formaat. In sommige gevallen beschikken we ook over rijkere metadata als ESE of EAD.
 
@@ -74,6 +74,7 @@ Vergelijk de volgende voorbeelden - wanneer is er sprake van hiërarchie en hoe 
 
 
 ###Extractie termen uit tekst
+
 Van records zonder `coverage` zijn `title` en `description` tegen een [postagger](http://www.clips.ua.ac.be/pages/pattern-nl) aangehouden om eigennamen te extraheren. Die eigennamen zijn vervolgens alleen als geografische term opgeslagen als ze door de reguliere expressie `(^| )(?i)(te|uit|in|op|bij|naar)(?-i) (de|het|den)?[ ]?Eigennaam` kwamen (waarbij `Eigennaam` vervangen werd door de door de postagger gevonden eigennaam).
 
 Dit is gedaan met alle datasets behalve de kranten (zie voor de kranten de test met de 190 in de oorlog verschenen nummers van De Gelderlander).
@@ -93,7 +94,7 @@ De termen zijn eerst tegen de [Historisch Geocoder](http://www.erfgeo.nl) gehoud
 
 Om de kans op een eenduidig resultaat te vergroten is eerst gezocht naar landen, vervolgens naar plaatsen, provincies, gemeenten, straten en tot slot adressen. Zodra er een resultaat was is steeds het zoeken gestopt, zodat bij Denemarken het land gevonden werd, en niet ook de gelijknamige plaats bij Slochteren.
 
-Er is zoveel mogelijk gegeocodeert naar GeoNames URIs, een keuze die is ingegeven door de wereldwijde dekking, de gebruiksvriendelijke API van GeoNames zelf en de brede toepassing van GeoNames URIs in wetenschap en het erfgoedveld. Voor straten, adressen en gebouwen zijn BAG id's gebruikt. De BAG (Basisadministratie Adressen en Gebouwen) heeft nog geen URIs (googlen op BAG URI brengt je bij plaszakjes in voor dames en heren), maar de BAG id's zijn wel op te vragen bij de Historische Geocoder.
+Er is zoveel mogelijk gegeocodeert naar [GeoNames](http://www.geonames.org/) URIs, een keuze die is ingegeven door de wereldwijde dekking, de gebruiksvriendelijke [API van GeoNames](http://www.geonames.org/export/geonames-search.html) zelf en de brede toepassing van GeoNames URIs in wetenschap en het erfgoedveld. Voor straten, adressen en gebouwen zijn BAG id's gebruikt. De BAG (Basisadministratie Adressen en Gebouwen) heeft nog geen URIs (googlen op BAG URI brengt je bij plaszakjes in voor dames en heren), maar de BAG id's zijn wel op te vragen bij de Historische Geocoder.
 
 Bij één resultaat is het resultaat opgeslagen, bij meerdere resultaten is de term alleen gemarkeerd met 'multiple'. Dit betekent dat een term meerdere geocodes kan opleveren en het vergt (vaak handmatig) onderzoek om de juiste match te maken. Er ligt een Middelburg op Walcheren, maar ook een Middelburg in Zuid-Holland.
 
@@ -122,7 +123,7 @@ De termen met één resultaat zijn onder te verdelen in de onderstaande typen. D
 
 ###Extractie termen uit subject
 
-Van records zonder `coverage` zijn, pas na het geocoderen, de trefwoorden uit het veld `subject` tegen de in de vorige stappen al geëxtraheerde termen gehouden. Trefwoorden die nog niet in die termen voorkwamen zijn dus niet opgenomen. Enerzijds omdat het tegen verschillende geocoders houden van alle nieuwe termen veel tijd zou kosten, anderzijds omdat de kans op vals positieven groot was.
+Van records zonder `coverage` zijn, pas na het geocoderen, de trefwoorden uit het veld `subject` tegen de in de vorige stappen al geëxtraheerde termen gehouden. Trefwoorden die nog niet in die termen voorkwamen zijn dus niet opgenomen. Enerzijds omdat het tegen verschillende geocoders houden van alle nieuwe termen veel tijd zou kosten, anderzijds omdat de kans op vals positieven daarbij groot was.
 
 <table>
 <tr><td>Aantal records met term uit subject</td><td>411.565</td></tr>
@@ -576,7 +577,7 @@ Zeker is dat er bij de extractie van termen uit tekst ook veel geografische aand
 
 ###Vals negatieven alsnog oplossen
 
-Het zou goed zijn te kijken naar (of de Historische Geocoder zelf aan te vullen met) een lijst historische Indonesische namen. Voorts zouden een lijst kampen ('Wang Po'), andere oorlogsgerelateerde geografische namen (‘Hitler-Deutschland’) of een referentielijst verdwenen bouwwerken ('Bentheinkazerne') ook helpen.
+Het zou goed zijn te kijken naar (of de Historische Geocoder zelf aan te vullen met) een lijst historische Indonesische namen. Voorts zouden een lijst kampen ('Wang Po'), andere oorlogsgerelateerde geografische namen (‘Hitler-Deutschland’) of een [referentielijst verdwenen bouwwerken](http://www.verdwenengebouwen.nl/) ('Bentheinkazerne') ook helpen.
 
 Geautomatiseerd zou een enkele term nog wel op te lossen zijn ('ss/ß' en 'oe/ö', samentrekkingen uit elkaar halen), maar veel termen ontberen context ('Zaanse wethouder' of 'Zaanse mosterd', welk 'mobilisatiebureau'?).
 
@@ -599,7 +600,8 @@ Vaak zijn er ook meerdere plaatsen met dezelfde naam - er zijn, nog los van Jaka
 Dat een kaart je zoekresultaten inzichtelijker maakt zal niemand ontkennen - je krijgt meteen een goed beeld van de geografische spreiding van hetgeen je naar zocht.
 Geometrieën (puntjes, lijnen of polygonen) geven je de mogelijkheid te zoeken op nabijheid, binnen een bounding box (een rechthoek tussen twee schuin tegenover elkaar liggende coördinaten) of een polygoon (een veelhoek die je bijvoorbeeld de mogelijkheid geeft te zoeken binnen het gebied ‘De Veluwe’).
 
-figuur 1: inzicht in aantallen records per woonplaats
+![provinciekaart](../images/provkaart.jpg)
+_figuur 1: inzicht in aantallen records per woonplaats_
 
 
 Een goed gestandaardiseerde geografische aanduiding brengt behalve geometrie ook hiërarchie binnen handbereik. Van een GeoName of BAG id kan je eenvoudig achterhalen in welke plaats, gemeente, provincie of welk land het ligt. Sla je deze hiërarchische gegevens op, dan kan je dus goed zoeken op ‘verzetskranten gelderland’ - ook als die verzetskranten oorspronkelijk alleen met plaatsnamen getagd waren. Dit is ook te gebruiken voor exports.
