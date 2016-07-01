@@ -24,7 +24,7 @@ De verrijkingen zullen bestaan uit identifiers (URI’s), geometrie en hiërarch
 
 ###Geocoderen inbouwen in infrastructuur
 
-Onderdeel van de pilot is ook te kijken hoe geocoderen in het huidige harvest & publicatie proces van Oorlogsbronnen kan worden ingepast. De technische infrastructuur wordt onderhouden door Trifork. De geografische metadata & georefereren moeten aansluiten bij deze infrastructuur.
+Onderdeel van de pilot is ook te kijken hoe geocoderen in het huidige harvest & publicatie proces van Oorlogsbronnen kan worden ingepast. De technische infrastructuur wordt onderhouden door de leverancier. De geografische metadata & georefereren moeten aansluiten bij deze infrastructuur.
 
 Onderzocht is welke stappen in het proces aangepast of toegevoegd moeten worden, dit voor zowel nieuwe als gewijzigde objecten. De context, bijvoorbeeld uit welke collectie het object komt, is belangrijk en moet meegenomen worden.
 
@@ -606,7 +606,7 @@ _figuur 1: inzicht in aantallen records per woonplaats_
 
 Een goed gestandaardiseerde geografische aanduiding brengt behalve geometrie ook hiërarchie binnen handbereik. Van een GeoName of BAG id kan je eenvoudig achterhalen in welke plaats, gemeente, provincie of welk land het ligt. Sla je deze hiërarchische gegevens op, dan kan je dus goed zoeken op ‘verzetskranten gelderland’ - ook als die verzetskranten oorspronkelijk alleen met plaatsnamen getagd waren. Dit is ook te gebruiken voor exports.
 
-Om dit alles mogelijk te maken moeten de eenduidige resultaten die het geocoderen heeft opgeleverd opgenomen worden in de Elastic Search index van Netwerk Oorlogsbronnen. Binnen deze pilot zullen NDJSON bestanden gemaakt worden waarmee Trifork dit eenvoudig kan doen. NDJSON staat voor ‘newline delimited json’, een formaat waarin elke regel een JSON array bevat, met in dit geval de NIOD identifier, geometrie en hiërarchie: plaats, gemeente, provincie, land.
+Om dit alles mogelijk te maken moeten de eenduidige resultaten die het geocoderen heeft opgeleverd opgenomen worden in de Elastic Search index van Netwerk Oorlogsbronnen. Binnen deze pilot zullen NDJSON bestanden gemaakt worden waarmee de leverancier dit eenvoudig kan doen. NDJSON staat voor ‘newline delimited json’, een formaat waarin elke regel een JSON array bevat, met in dit geval de NIOD identifier, geometrie en hiërarchie: plaats, gemeente, provincie, land.
 
 Zijn de resultaten in de Elastic Search index opgenomen, dan is het aanpassen van de tekstuele zoekinterface relatief weinig werk. De nieuw geïndexeerde velden zullen binnen de bestaande API op Elastic Search toegankelijk komen. De opgeslagen hiërarchie komt vooral hierbij van pas. Een kaartinterface zal wat meer inspanning kosten, maar ook die is te overzien. Sowieso is het aan te bevelen een prototype van zo’n kaartinterface te maken, al was het maar om intern de waarde van het geocoderingsproces verder te kunnen evalueren. 
 
