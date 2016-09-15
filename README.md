@@ -15,3 +15,7 @@ In the [scripts directory](scripts/) you will find some scripts we used.
 ##data
 
 In [data](data/) you will find the results of this pilot. 
+
+##fun
+
+We made a [World Map of False Positives](http://islandsofmeaning.nl/projects/falsepositives/) with war related street- and placenames: Anne Frank, Spitfire, Axis, Uniform, Zuidfront, Het Verzet, etc.
